@@ -1,5 +1,6 @@
 import '@mantine/core/styles.css'
 import React from 'react'
+import { Inter } from 'next/font/google'
 import { MantineProvider, ColorSchemeScript } from '@mantine/core'
 import { theme } from '../theme'
 
@@ -8,9 +9,18 @@ export const metadata = {
   description: 'I am using Mantine with Next.js!'
 }
 
-export default function RootLayout ({ children }: { children: any }) {
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap'
+})
+
+export default function RootLayout ({
+  children
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang='en'>
+    <html lang='en' className={inter.className}>
       <head>
         <ColorSchemeScript />
         <link rel='shortcut icon' href='/favicon.svg' />
