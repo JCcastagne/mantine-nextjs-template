@@ -1,8 +1,6 @@
 'use client'
 
 import {
-  Center,
-  Group,
   Image,
   Text,
   Button,
@@ -30,15 +28,6 @@ export default function Header () {
   const computedColorScheme = useComputedColorScheme('light')
   const { setColorScheme, clearColorScheme, colorScheme } =
     useMantineColorScheme()
-
-  console.log(
-    'colorScheme1: ',
-    colorScheme1,
-    'computedColorScheme: ',
-    computedColorScheme,
-    'colorScheme: ',
-    colorScheme
-  )
 
   return (
     <Grid>
@@ -133,92 +122,4 @@ export default function Header () {
       </GridCol>
     </Grid>
   )
-
-  // return (
-  //   <Grid py={16} align='center' justify='space-between'>
-  //     {/* Logo + title */}
-  //     <GridCol span={4}>
-  //       <Center
-  //         component={Link}
-  //         href='/'
-  //         style={{ textDecoration: 'none', transform: `translate(-40px, 0)` }}
-  //       >
-  //         <Image
-  //           src={smartphone_database_logo.src}
-  //           fit='contain'
-  //           w='auto'
-  //           h='99'
-  //           style={{ transform: `translate(-16px, 26px)` }}
-  //         />
-
-  //         <Text
-  //           size='xl'
-  //           fw={700}
-  //           variant='gradient'
-  //           gradient={
-  //             computedColorScheme === 'light'
-  //               ? { from: 'violet', to: 'grape', deg: 45 }
-  //               : {
-  //                   from: 'var(--mantine-color-violet-5)',
-  //                   to: 'var(--mantine-color-pink-3)',
-  //                   deg: 45
-  //                 }
-  //           }
-  //           maw={165}
-  //           lh={1.14}
-  //         >
-  //           The Smartphone Database
-  //         </Text>
-  //       </Center>
-  //     </GridCol>
-
-  //     {/* Links */}
-  //     <GridCol span={4}>
-  //       <Group gap={3}>
-  //         {links.map((value, index) => {
-  //           return (
-  //             <Button
-  //               variant='subtle'
-  //               component={Link}
-  //               href={value.href}
-  //               key={'l' + index}
-  //             >
-  //               {value.label}
-  //             </Button>
-  //           )
-  //         })}
-  //       </Group>
-  //     </GridCol>
-
-  //     {/* Action buttons */}
-  //     <GridCol span={4}>
-  //       <Group gap={8}>
-  //         <ActionIcon
-  //           aria-label='Github repository'
-  //           variant='outline'
-  //           size='lg'
-  //           component={Link}
-  //           href='https://github.com/jccastagne'
-  //           target='blank'
-  //         >
-  //           <Feather.GitHub size={20} />
-  //         </ActionIcon>
-  //         <ActionIcon
-  //           aria-label='Dark/light mode toggle settings'
-  //           variant='outline'
-  //           size='lg'
-  //           onClick={() =>
-  //             setColorScheme(computedColorScheme === 'light' ? 'dark' : 'light')
-  //           }
-  //         >
-  //           {computedColorScheme === 'light' ? (
-  //             <Feather.Sun size={20} />
-  //           ) : (
-  //             <Feather.Moon size={20} />
-  //           )}
-  //         </ActionIcon>
-  //       </Group>
-  //     </GridCol>
-  //   </Grid>
-  // )
 }
