@@ -16,34 +16,10 @@ import smartphone_database_logo_light from '../../img/smartphone_database_logo_g
 import smartphone_database_logo_dark from '../../img/smartphone_database_logo_greyscale_dark.png'
 import * as Feather from 'react-feather'
 
+import { navLinks, socialLinks } from './links'
+
 export default function Header () {
   const computedColorScheme = useComputedColorScheme('light')
-
-  const topLinks = [
-    { label: 'First', href: '#' },
-    { label: 'Second', href: '#' },
-    { label: 'Third', href: '#' },
-    { label: 'Fourth', href: '#' },
-    { label: 'Fifth', href: '#' }
-  ]
-
-  const botLinks = [
-    {
-      label: 'Github',
-      href: 'https://github.com/jccastagne',
-      icon: <Feather.GitHub size={18} />
-    },
-    {
-      label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/jc-castagne/',
-      icon: <Feather.Linkedin size={18} />
-    },
-    {
-      label: 'Portfolio',
-      href: 'https://jccastagne.com',
-      icon: <Feather.User size={18} />
-    }
-  ]
 
   return (
     <Flex direction='column'>
@@ -53,6 +29,7 @@ export default function Header () {
         justify='space-between'
         py='xl'
         mt={120}
+
         // style={{
         //   borderTopWidth: '1px',
         //   borderTopStyle: 'solid',
@@ -111,7 +88,9 @@ export default function Header () {
         </Flex>
 
         <Flex align='center' gap={16}>
-          {topLinks.map((value, index) => {
+          {navLinks.map((value, index) => {
+            if (index === 0) return
+
             return (
               <Anchor
                 c='dimmed'
@@ -144,7 +123,7 @@ export default function Header () {
         </Text>
 
         <Group gap={8}>
-          {botLinks.map((item, index) => {
+          {socialLinks.map((item, index) => {
             return (
               <Button
                 component={Link}
