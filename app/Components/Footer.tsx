@@ -34,9 +34,21 @@ export default function Header () {
             : 'var(--mantine-color-gray-8)'
       }}
     >
-      <Container size='xl' style={{ justifyContent: 'space-between' }} w='100%'>
+      <Container
+        size='xl'
+        style={{
+          justifyContent: 'space-between'
+        }}
+        w='100%'
+      >
         {/* Top */}
-        <Flex align='center' justify='space-between' py='xl'>
+        <Flex
+          align='center'
+          justify='space-between'
+          py='xl'
+          wrap='wrap'
+          gap={33}
+        >
           <Flex
             display='flex'
             align='center'
@@ -57,7 +69,6 @@ export default function Header () {
               w='auto'
               h='45'
               mr={18}
-              // style={{ transform: `translate(-16px, 26px)` }}
             />
 
             <Text
@@ -68,24 +79,13 @@ export default function Header () {
                   ? 'var(--mantine-color-gray-6)'
                   : 'var(--mantine-color-gray-5)'
               }
-              // variant='gradient'
-              // gradient={
-              //   computedColorScheme === 'light'
-              //     ? { from: 'violet', to: 'grape', deg: 45 }
-              //     : {
-              //         from: 'var(--mantine-color-violet-5)',
-              //         to: 'var(--mantine-color-pink-3)',
-              //         deg: 45
-              //       }
-              // }
-              // maw={164}
-              // lh={1.14}
+              lh={1.14}
             >
               The Smartphone Database
             </Text>
           </Flex>
 
-          <Flex align='center' gap={16}>
+          <Flex align='center' wrap='wrap' gap={16}>
             {navLinks.map((item, index) => {
               if (index === 0) return
 
@@ -120,6 +120,8 @@ export default function Header () {
                 ? 'var(--mantine-color-gray-4)'
                 : 'var(--mantine-color-gray-8)'
           }}
+          wrap='wrap'
+          gap={33}
         >
           <Text c='dimmed' size='sm'>
             © {new Date().getFullYear()} J-C Castagne. All rights reserved.
