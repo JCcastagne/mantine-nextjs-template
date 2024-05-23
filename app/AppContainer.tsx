@@ -23,11 +23,9 @@ export default function AppContainer ({
             : 'var(--mantine-color-gray-9)'
       }}
     >
-      <Container size='xl'>
-        <Header />
-        {children}
-        <Footer />
-      </Container>
+      <Header />
+      <Container size='xl'>{children}</Container>
+      <Footer />
     </Box>
   )
 }
