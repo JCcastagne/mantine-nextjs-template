@@ -18,9 +18,9 @@ import {
 } from '@mantine/core'
 import * as Feather from 'react-feather'
 import Link from 'next/link'
-import { useColorScheme, useDisclosure } from '@mantine/hooks'
+import { useColorScheme, useDisclosure, useMediaQuery } from '@mantine/hooks'
 import smartphone_database_logo from '../../img/smartphone_database_logo.png'
-import { navLinks, socialLinks } from './links'
+import { navLinks } from './links'
 
 export default function Header () {
   const colorScheme1 = useColorScheme()
@@ -45,6 +45,8 @@ export default function Header () {
               color='gray'
               size='lg'
               onClick={() => open()}
+              mr={1}
+              style={{ zIndex: 2 }}
             >
               <Feather.Menu />
             </ActionIcon>
@@ -174,9 +176,16 @@ function MobileDrawer (props: Props): React.JSX.Element {
   const { opened, close, computedColorScheme } = props
 
   const [active, setActive] = useState<Number>(0)
+  const largerThanSm = useMediaQuery('(min-width: 48em)')
 
   return (
-    <Drawer opened={opened} onClose={close}>
+    <Drawer
+      opened={opened}
+      onClose={close}
+      offset={largerThanSm ? 16 : 0}
+      radius={largerThanSm ? 'md' : 0}
+      size={largerThanSm ? 'md' : 'xs'}
+    >
       <Center
         component={Link}
         href='/'
