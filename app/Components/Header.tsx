@@ -18,15 +18,14 @@ import {
 } from '@mantine/core'
 import * as Feather from 'react-feather'
 import Link from 'next/link'
-import { useColorScheme, useDisclosure, useMediaQuery } from '@mantine/hooks'
+import { useDisclosure, useMediaQuery } from '@mantine/hooks'
 import smartphone_database_logo from '../../img/smartphone_database_logo.png'
 import { navLinks } from './links'
 
 export default function Header () {
-  const colorScheme1 = useColorScheme()
   const computedColorScheme = useComputedColorScheme('light')
-  const { setColorScheme, clearColorScheme, colorScheme } =
-    useMantineColorScheme()
+  const { setColorScheme } = useMantineColorScheme()
+  const largerThanSm = useMediaQuery('(min-width: 48em)')
 
   const [opened, { open, close }] = useDisclosure(false)
 
@@ -45,8 +44,7 @@ export default function Header () {
               color='gray'
               size='lg'
               onClick={() => open()}
-              mr={1}
-              style={{ zIndex: 2 }}
+              style={{ zIndex: 2, marginRight: 1 }}
             >
               <Feather.Menu />
             </ActionIcon>
@@ -59,7 +57,7 @@ export default function Header () {
             style={{
               alignItems: 'center',
               textDecoration: 'none',
-              transform: `translate(-40px, 0)`
+              transform: largerThanSm ? `translate(-40px, 0)` : ''
             }}
             component={Link}
             // @ts-ignore
@@ -70,15 +68,14 @@ export default function Header () {
               fit='contain'
               w='auto'
               h='99'
+              display={{ base: 'none', sm: 'inline-block' }}
               style={{ transform: `translate(-16px, 26px)` }}
             />
 
             <Text
               fz={{
                 base: 'var(--mantine-font-size-sm)',
-                sm: 'var(--mantine-font-size-md)',
-                md: 'var(--mantine-font-size-lg)'
-                // lg: 'var(--mantine-font-size-lg)'
+                sm: 'var(--mantine-font-size-md)'
               }}
               fw={700}
               variant='gradient'
@@ -91,8 +88,11 @@ export default function Header () {
                       deg: 45
                     }
               }
-              // maw={164}
-              lh={1.14}
+              // @ts-ignore
+              style={{
+                textAlign: largerThanSm ? '' : 'center',
+                lineHeight: 1.14
+              }}
             >
               The Smartphone Database
             </Text>
@@ -124,8 +124,8 @@ export default function Header () {
           <GridCol
             span={{ base: 'auto', md: 4 }}
             display='flex'
-            style={{ alignItems: 'center', justifyContent: 'end', gap: 8 }}
             h={115}
+            style={{ alignItems: 'center', justifyContent: 'end', gap: 8 }}
           >
             <ActionIcon
               aria-label='Github repository'
@@ -212,7 +212,6 @@ function MobileDrawer (props: Props): React.JSX.Element {
                   deg: 45
                 }
           }
-          maw={164}
           lh={1.14}
         >
           The Smartphone Database
