@@ -49,6 +49,7 @@ export default function Header () {
           wrap='wrap'
           gap={33}
         >
+          {/* Branding */}
           <Flex
             display='flex'
             align='center'
@@ -72,7 +73,7 @@ export default function Header () {
             />
 
             <Text
-              size='lg'
+              size='md'
               fw={600}
               c={
                 computedColorScheme === 'light'
@@ -107,11 +108,14 @@ export default function Header () {
           </Flex>
         </Flex>
 
+        {/* Bottom */}
         <Flex
           align='center'
           justify='space-between'
           mb={90}
           py='xl'
+          wrap='wrap'
+          gap={33}
           style={{
             borderTopWidth: '1px',
             borderTopStyle: 'solid',
@@ -120,8 +124,6 @@ export default function Header () {
                 ? 'var(--mantine-color-gray-4)'
                 : 'var(--mantine-color-gray-8)'
           }}
-          wrap='wrap'
-          gap={33}
         >
           <Text c='dimmed' size='sm'>
             © {new Date().getFullYear()} J-C Castagne. All rights reserved.
