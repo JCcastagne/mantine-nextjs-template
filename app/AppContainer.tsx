@@ -15,8 +15,8 @@ export default function AppContainer ({
   return (
     <Box
       style={{
-        width: '100vw',
-        height: '100vh',
+        minWidth: '100vw',
+        minHeight: '100vh',
         backgroundColor:
           colorScheme === 'light'
             ? 'var(--mantine-color-gray-1)'
