@@ -1,7 +1,6 @@
 'use client'
 
 import { Box, Container, useComputedColorScheme } from '@mantine/core'
-import { useColorScheme } from '@mantine/hooks'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 

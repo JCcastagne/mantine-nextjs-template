@@ -6,8 +6,8 @@ import { theme } from '../theme'
 import AppContainer from './AppContainer'
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!'
+  title: 'Mantine NextJS Template',
+  description: 'Created by J-C Castagne'
 }
 
 const inter = Inter({

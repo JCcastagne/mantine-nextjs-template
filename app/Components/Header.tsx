@@ -94,7 +94,7 @@ export default function Header () {
                 lineHeight: 1.14
               }}
             >
-              The Smartphone Database
+              Mantine Template
             </Text>
           </GridCol>
 
@@ -214,7 +214,7 @@ function MobileDrawer (props: Props): React.JSX.Element {
           }
           lh={1.14}
         >
-          The Smartphone Database
+          Mantine Template
         </Text>
       </Center>
 

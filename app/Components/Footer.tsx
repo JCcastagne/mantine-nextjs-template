@@ -82,7 +82,7 @@ export default function Header () {
               }
               lh={1.14}
             >
-              The Smartphone Database
+              Mantine Template by J-C Castagne
             </Text>
           </Flex>
 
