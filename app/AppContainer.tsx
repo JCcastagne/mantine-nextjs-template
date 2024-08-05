@@ -1,8 +1,8 @@
 'use client'
 
 import { Box, Container, useComputedColorScheme } from '@mantine/core'
-import Header from './Components/Header'
-import Footer from './Components/Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default function AppContainer ({
   children
