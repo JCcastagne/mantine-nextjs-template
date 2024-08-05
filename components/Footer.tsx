@@ -11,7 +11,7 @@ import {
 import Link from 'next/link'
 import smartphone_database_logo_light from '../../img/smartphone_database_logo_greyscale_light.png'
 import smartphone_database_logo_dark from '../../img/smartphone_database_logo_greyscale_dark.png'
-import { navLinks, socialLinks } from './links'
+import { navLinks, socialLinks } from './_links'
 
 export default function Header () {
   const computedColorScheme = useComputedColorScheme('light')

@@ -20,7 +20,7 @@ import * as Feather from 'react-feather'
 import Link from 'next/link'
 import { useDisclosure, useMediaQuery } from '@mantine/hooks'
 import smartphone_database_logo from '../../img/smartphone_database_logo.png'
-import { navLinks } from './links'
+import { navLinks } from './_links'
 
 export default function Header () {
   const computedColorScheme = useComputedColorScheme('light')
