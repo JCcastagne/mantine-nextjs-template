@@ -105,16 +105,18 @@ export default function Header () {
             style={{ alignItems: 'center', justifyContent: 'center' }}
           >
             {navLinks.map((value, index) => {
+              const { href, label } = value
+
               if (index === 0) return
 
               return (
                 <Button
                   variant='subtle'
                   component={Link}
-                  href={value.href}
+                  href={href}
                   key={'l' + index}
                 >
-                  {value.label}
+                  {label}
                 </Button>
               )
             })}
@@ -220,23 +222,22 @@ function MobileDrawer (props: Props): React.JSX.Element {
 
       <Stack>
         {navLinks.map((item, index) => {
+          const { href, label, Icon, description } = item
+
           return (
             <NavLink
-              href={item.href}
-              label={item.label}
-              leftSection={item.icon}
-              rightSection={<Feather.ChevronRight size={16} />}
+              href={href}
+              label={label}
+              leftSection={<Icon size={18} />}
+              rightSection={<Feather.ChevronRight size={18} />}
               active={index === active}
               onClick={() => setActive(index)}
               description={item?.description}
               key={'l' + index}
-              aria-label={item.label}
+              aria-label={label}
               variant='filled'
               style={{ borderRadius: 'var(--mantine-radius-md)' }}
-              // active
-              // color='var(--mantine-color-primary)'
             />
-            // </Button>
           )
         })}
       </Stack>

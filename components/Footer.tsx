@@ -88,6 +88,8 @@ export default function Header () {
 
           <Flex align='center' wrap='wrap' gap={16}>
             {navLinks.map((item, index) => {
+              const { href, label, Icon } = item
+
               if (index === 0) return
 
               return (
@@ -95,13 +97,13 @@ export default function Header () {
                   component={Link}
                   variant='subtle'
                   color='gray'
-                  leftSection={item.icon}
-                  href={item.href}
-                  aria-label={item.label}
+                  href={href}
+                  leftSection={<Icon size={16} />}
+                  aria-label={label}
                   target='_blank'
                   key={'l' + index}
                 >
-                  {item.label}
+                  {label}
                 </Button>
               )
             })}
